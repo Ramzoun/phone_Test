@@ -1,9 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-
-<widget id="io.cordova.hellocordova" version="0.0.1" 
-android-versionCode="13" 
-xmlns="http://www.w3.org/ns/widgets" 
-xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
 <name>Travelly</name>
 	<description>
 		A sample Apache Cordova application that responds to the
@@ -16,11 +12,22 @@ xmlns:cdv="http://cordova.apache.org/ns/1.0">
 
 	<content src="index.html" />
 
-	<access origin="*" />
-	<allow-navigation href="*" />
-	<allow-intent href="http://*/*" />
-<allow-intent href="https://*/*" />
+	<preference name="android-minSdkVersion" value="14" />
 	
-	<plugin name="cordova-plugin-whitelist" source="pgb" spec="~1.3.3" />
+	
+    <plugin name="cordova-plugin-splashscreen" source="npm" spec="~3.2.1" />
+	<plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
+	
+	<platform name="android">
+        <icon density="mdpi" src="images/drawable-mdpi-icon.png" />
+        <splash density="land-mdpi" src="images/drawable-land-mdpi-screen.png" />
+        <splash density="port-mdpi" src="images/drawable-port-mdpi-screen.png" />
+    </platform>
+	
+	
+	<access origin="*" />
+    <allow-intent href="http://*/*" />
+    <allow-intent href="https://*/*" />
+	
 
 </widget>
