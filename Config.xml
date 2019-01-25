@@ -19,9 +19,9 @@
 	<plugin name="cordova-plugin-whitelist" source="npm" spec="~1.2.1" />
 	
 	<platform name="android">
-        <icon density="mdpi" src="images/drawable-mdpi-icon.png" />
-        <splash density="land-mdpi" src="images/drawable-land-mdpi-screen.png" />
-        <splash density="port-mdpi" src="images/drawable-port-mdpi-screen.png" />
+        <icon density="mdpi" src="res/icon/android/drawable-mdpi-icon.png" />
+        <splash density="land-mdpi" src="res/screen/android/drawable-land-mdpi-screen.png" />
+        <splash density="port-mdpi" src="res/screen/android/drawable-port-mdpi-screen.png" />
     </platform>
 	
 	
