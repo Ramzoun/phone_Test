@@ -114,7 +114,7 @@ y.params.hashnav&&y.hashnav&&y.hashnav.init(),y.params.a11y&&y.a11y&&y.a11y.init
 		}, opt);
 
 		var id = $(this).attr("id"), i, s = "", dt;
-		$("#" + id).empty();
+		//$("#" + id).empty();
 		if (def.FeedUrl == undefined) return;
 		//$("#" + id).append('<img src="loader.gif" />');
 		$.ajax({
