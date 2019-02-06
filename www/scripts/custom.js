@@ -1,9 +1,12 @@
 $(document).ready(function () {
 
+
+	
+	
 	// feed reader
 	$('#divRss').FeedEk({
                 FeedUrl: 'https://www.mosaiquefm.net/ar/rss',
-				ShowDesc : false,
+				ShowDesc : true,
 				DescCharacterLimit:100,
 				TitleLinkTarget:'_blank',
 				ShowPubDate:false,
@@ -865,3 +868,11 @@ $(document).ready(function () {
     });
     
 });
+
+/*
+$( document ).ajaxComplete(function() {
+  $('.abc').each(function(){abcF();});
+});
+*/
+
+

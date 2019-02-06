@@ -114,7 +114,7 @@ y.params.hashnav&&y.hashnav&&y.hashnav.init(),y.params.a11y&&y.a11y&&y.a11y.init
 		}, opt);
 
 		var id = $(this).attr("id"), i, s = "", dt;
-		//$("#" + id).empty();
+		$("#" + id).empty();
 		if (def.FeedUrl == undefined) return;
 		//$("#" + id).append('<img src="loader.gif" />');
 		$.ajax({
@@ -126,11 +126,11 @@ y.params.hashnav&&y.hashnav&&y.hashnav.init(),y.params.a11y&&y.a11y&&y.a11y.init
 					return;
 				$.each(result.data, function (e, itm) {
 					s += '<a href="' + itm.link + '" target="' + def.TitleLinkTarget + '" >';
-								s += '<img class="preload-image" data-original="images/pictures/1t.jpg" alt="img">';
+								//s += '<img class="preload-image rssImg" data-original="images/pictures/1t.jpg" alt="img">';
+								s += '<img class="rssImg" src="images/pictures/1t.jpg" alt="img">';
 								s += '<strong>'+itm.title+'</strong>';
 					if (def.ShowPubDate) {
 						dt = new Date(itm.publishDate);
-						s += '<div class="itemDate">';
 						if ($.trim(def.DateFormat).length > 0) {
 							try {
 								moment.lang(def.DateFormatLang);
@@ -141,9 +141,10 @@ y.params.hashnav&&y.hashnav&&y.hashnav.init(),y.params.a11y&&y.a11y&&y.a11y.init
 						else {
 							s += dt.toLocaleDateString();
 						}
-						s += '</div>';
 					}
 					if (def.ShowDesc) {
+						s += '<em>Android released it’s latest operating system, and it’s gorgeous. Powerful than ever and with more features!</em>';
+						/*
 						s += '<em>';
 						if (def.DescCharacterLimit > 0 && itm.description.length > def.DescCharacterLimit) {
 							s += itm.description.substring(0, def.DescCharacterLimit) + '...';
@@ -152,14 +153,29 @@ y.params.hashnav&&y.hashnav&&y.hashnav.init(),y.params.a11y&&y.a11y&&y.a11y.init
 							s += itm.description;
 						}
 						s += '</em>';
+						*/
 					}
-					s += '</a>';
+					s += '</a><div class="abc"></div>';
 				});
 				$("#" + id).append(s);
-			}
+			}/*,
+			complete: function () {
+				 $(".rssImg").lazyload({
+											threshold : 100,
+											effect : "fadeIn",
+											container: $("#page-content-scroll")
+										});//each(function(){//if($(this).find(".preload-image"))
+											console.log("yy");})
+			}*/
 		});
 	};
 }(jQuery));
 
-
+/*
+(function ($) {
+	$.fn.abcF = function () {
+		console.log('loaded');
+	};
+}(jQuery));
+*/
 
