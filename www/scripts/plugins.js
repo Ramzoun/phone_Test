@@ -126,8 +126,8 @@ y.params.hashnav&&y.hashnav&&y.hashnav.init(),y.params.a11y&&y.a11y&&y.a11y.init
 					return;
 				$.each(result.data, function (e, itm) {
 					s += '<a href="' + itm.link + '" target="' + def.TitleLinkTarget + '" >';
-								//s += '<img class="preload-image rssImg" data-original="images/pictures/1t.jpg" alt="img">';
-								s += '<img class="rssImg" src="images/pictures/1t.jpg" alt="img">';
+								s += '<img class="rssImg" data-original="https://content.mosaiquefm.net/uploads/content/thumbnails_small/1549570806_article.jpg" alt="img">';
+								//s += '<img class="rssImg" src="https://content.mosaiquefm.net/uploads/content/thumbnails_small/1549570806_article.jpg" alt="img">';
 								s += '<strong>'+itm.title+'</strong>';
 					if (def.ShowPubDate) {
 						dt = new Date(itm.publishDate);
@@ -155,27 +155,19 @@ y.params.hashnav&&y.hashnav&&y.hashnav.init(),y.params.a11y&&y.a11y&&y.a11y.init
 						s += '</em>';
 						*/
 					}
-					s += '</a><div class="abc"></div>';
 				});
 				$("#" + id).append(s);
-			}/*,
+			},
 			complete: function () {
 				 $(".rssImg").lazyload({
 											threshold : 100,
 											effect : "fadeIn",
 											container: $("#page-content-scroll")
-										});//each(function(){//if($(this).find(".preload-image"))
-											console.log("yy");})
-			}*/
+										});
+				$(".thumb-layout-page a").slice(0, 5).show();
+			}
 		});
 	};
 }(jQuery));
 
-/*
-(function ($) {
-	$.fn.abcF = function () {
-		console.log('loaded');
-	};
-}(jQuery));
-*/
 
